@@ -9,7 +9,9 @@ export default class List {
 
   get Template() {
     return `
-    <div class="grid-item col-3 mt-3 p-3 border rounded bg-white">
+    
+    <div class="card">
+    <div class="card-body mt-3 p-3 border rounded list">
       <h1 class="text-center border-bottom">${this.name}</h1>
       <dl class="ml-5">
       ${this.getTaskTemplates()}
@@ -28,6 +30,8 @@ export default class List {
         }')">Delete</button> 
       </form>
     </div>
+    </div>
+    
     `;
   }
   getTaskTemplates() {
