@@ -43,14 +43,18 @@ export default class ListController {
     _drawLists();
   }
   removeList(listId) {
-    confirm("Are You Sure You Want To Delete This List?");
+    // @ts-ignore
+    if (confirm("Are You Sure You Want To Delete This Task?")) {
+      ListService.removeList(listId);
+    }
 
-    ListService.removeList(listId);
     _drawLists();
   }
   removeTask(listId, taskId) {
-    confirm("Are You Sure You Want To Delete This Task?");
-    ListService.removeTask(listId, taskId);
+    // @ts-ignore
+    if (confirm("Are You Sure You Want To Delete This Task?", "warning")) {
+      ListService.removeTask(listId, taskId);
+    }
     _drawLists();
   }
   //TODO: Your app will need the ability to create, and delete both lists and listItems(tasks)

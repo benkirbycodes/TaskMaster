@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css"
     />
     <link rel="stylesheet" href="assets/style.css" />
     <title>Task Master!</title>
   </head>
 
-  <body class="bg-dark">
+  <body class="bg-light">
     <header class="container-fluid">
-      <div class="row text-center text-white">
-        <div class="col-12"><h1>List-Maker</h1></div>
+      <div class="row text-center ">
+        <div class="col-12"><h1 class="border-bottom">List-Maker</h1></div>
       </div>
     </header>
     <main class="container-fluid">
@@ -23,17 +23,20 @@
         <div class="col-12 p-5">
           <form onsubmit="app.listController.addList(event)">
             <div class="form-group">
-              <label class="text-white" for="list">New List</label>
+              <label class="" for="list">New List</label>
               <input
                 type="text"
                 class="form-control"
                 id="name"
                 aria-describedby="enter-new-list"
                 placeholder="Enter New List Name..."
+                required
               />
             </div>
 
-            <button type="submit" class="btn btn-primary">Create!</button>
+            <button type="submit" class="btn text-white btn-primary">
+              Create!
+            </button>
           </form>
         </div>
       </div>
@@ -43,7 +46,7 @@
     </main>
 
     <footer class="container-fluid"></footer>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="app/main.js" type="module"></script>
   </body>
 </html>

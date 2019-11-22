@@ -10,22 +10,22 @@ export default class List {
   get Template() {
     return `
     
-    <div class="card">
-    <div class="card-body mt-3 p-3 border rounded list">
+    <div class="card text-white bg-dark">
+    <div class="card-body p-3 border rounded list">
       <h1 class="text-center border-bottom">${this.name}</h1>
-      <dl class="ml-5">
+      <dl class=" text-center ml-5">
       ${this.getTaskTemplates()}
       </dl>
       <form onsubmit="app.listController.addTask(event, '${this.id}')">
         <div class="form-group">
           <label for="name">Task</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter name" />
+          <input type="text" class="form-control" required id="name" placeholder="Enter name" />
         </div>
        
         
         
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-outline btn-danger" onclick="app.listController.removeList('${
+        <button type="submit"  class="btn text-white btn-primary">Submit</button>
+        <button type="button" class="btn text-white btn-danger btn-outline " onclick="app.listController.removeList('${
           this.id
         }')">Delete</button> 
       </form>
