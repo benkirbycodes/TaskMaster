@@ -1,12 +1,31 @@
 import ListService from "../Services/ListService.js";
+import store from "../store.js";
 
 //TODO Don't forget to render to the screen after every data change.
-function _drawLists() {}
+function _drawLists() {
+  let listsTemplate = "";
+  let lists = store.State.lists;
+  lists.forEach(list => {
+    listsTemplate += list.Template;
+  });
+  document.querySelector("#lists").innerHTML = listsTemplate;
+}
 
 //Public
 export default class ListController {
   constructor() {
     //NOTE: After the store loads, we can automatically call to draw the lists.
+    _drawLists();
+  }
+  addList(event) {
+    event.preventDefault();
+    console.log("Hello from listController");
+    let formData = event.target;
+    let newList = {
+      name: formData.name.value
+    };
+    ListService.addList(newList);
+    formData.reset();
     _drawLists();
   }
 
