@@ -43,10 +43,12 @@ export default class ListController {
     _drawLists();
   }
   removeList(listId) {
+    confirm("Are You Sure You Want To Delete This List?");
     ListService.removeList(listId);
     _drawLists();
   }
   removeTask(listId, taskId) {
+    confirm("Are You Sure You Want To Delete This Task?");
     ListService.removeTask(listId, taskId);
     _drawLists();
   }
