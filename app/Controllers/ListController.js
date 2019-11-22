@@ -22,7 +22,8 @@ export default class ListController {
     console.log("Hello from listController");
     let formData = event.target;
     let newList = {
-      name: formData.name.value
+      name: formData.name.value,
+      tasks: []
     };
     ListService.addList(newList);
     formData.reset();
