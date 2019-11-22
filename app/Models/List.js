@@ -23,7 +23,7 @@ export default class List {
         
         
         <button type="submit" class="btn btn-primary">Submit</button>
-        <button class="btn btn-outline btn-danger" onclick="app.sessionsController.deleteList()">Delete</button> 
+        <button class="btn btn-outline btn-danger" onclick="app.listController.removeList()">Delete</button> 
       </form>
     </div>
     `;

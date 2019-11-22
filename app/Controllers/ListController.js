@@ -29,6 +29,21 @@ export default class ListController {
     formData.reset();
     _drawLists();
   }
-
-  //TODO: Your app will need the ability to create, and delete both lists and listItems
+  addTask(event, listId) {
+    event.preventDefault();
+    console.log("Hello From list Controller");
+    let formData = event.target;
+    let newTask = {
+      name: formData.name.value,
+      listId: listId
+    };
+    ListService.addTask(newTask);
+    formData.reset();
+    _drawLists();
+  }
+  removeList(listId) {
+    ListService.removeList(listId);
+    _drawLists();
+  }
+  //TODO: Your app will need the ability to create, and delete both lists and listItems(tasks)
 }

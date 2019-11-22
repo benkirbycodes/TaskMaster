@@ -1,8 +1,22 @@
 import List from "../Models/List.js";
 import store from "../store.js";
+import Task from "../Models/Task.js";
 
 //Public
 class ListService {
+  removeList(listId) {
+    let listIndex = store.State.lists.findIndex(l => l.id == listId);
+    store.State.lists.splice(listIndex, 1);
+    store.saveState();
+  }
+  addTask(newTask) {
+    console.log("Hello from listService");
+    let task = new Task(newTask);
+    let list = store.State.lists.find(l => l.id == task.listId);
+
+    list.tasks.push(task);
+    store.saveState();
+  }
   addList(newList) {
     console.log("Hello from listService");
     let list = new List(newList);
