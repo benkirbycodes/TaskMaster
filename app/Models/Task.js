@@ -8,8 +8,8 @@ export default class Task {
   }
   get Template() {
     return `
-    <dt class="">${this.name}</dt>
-    <button type="submit"class="btn btn-sm btn-danger" onclick="app.listController.removeTask('${this.listId}','${this.id}')">Delete</button>
+    <dt class=" mb-1"><h3>${this.name}</h3></dt>
+    <button type="submit"class="btn btn-sm btn-success" onclick="app.listController.removeTask('${this.listId}','${this.id}')">Complete?</button>
     `;
   }
 }

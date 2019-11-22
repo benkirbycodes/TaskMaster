@@ -10,10 +10,10 @@ export default class List {
   get Template() {
     return `
     
-    <div class="card text-white bg-dark">
+    <div class="card mx-auto text-white bg-dark">
     <div class="card-body p-3 border rounded list">
       <h1 class="text-center border-bottom">${this.name}</h1>
-      <dl class=" text-center ml-5">
+      <dl class="text-center ">
       ${this.getTaskTemplates()}
       </dl>
       <form onsubmit="app.listController.addTask(event, '${this.id}')">
