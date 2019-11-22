@@ -4,6 +4,12 @@ import Task from "../Models/Task.js";
 
 //Public
 class ListService {
+  removeTask(listId, taskId) {
+    let list = store.State.lists.find(l => l.id == listId);
+    let taskIndex = list.tasks.findIndex(t => t.id == taskId);
+    list.tasks.splice(taskIndex, 1);
+    store.saveState();
+  }
   removeList(listId) {
     let listIndex = store.State.lists.findIndex(l => l.id == listId);
     store.State.lists.splice(listIndex, 1);
