@@ -11,6 +11,9 @@ class Store {
   /**
    * Provides access to application state data
    */
+  constructor() {
+    this.loadState();
+  }
   get State() {
     return _state;
   }
