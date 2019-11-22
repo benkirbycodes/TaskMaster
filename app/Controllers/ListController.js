@@ -44,6 +44,7 @@ export default class ListController {
   }
   removeList(listId) {
     confirm("Are You Sure You Want To Delete This List?");
+
     ListService.removeList(listId);
     _drawLists();
   }
