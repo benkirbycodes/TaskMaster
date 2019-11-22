@@ -5,7 +5,7 @@ import List from "../Models/List.js";
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
   let listsTemplate = "";
-  let lists = store.State.lists;
+  let lists = store.Lists; //NOTE changed to .Lists to persist on page reload
   lists.forEach(list => {
     listsTemplate += list.Template;
   });
