@@ -44,7 +44,7 @@ export default class ListController {
   }
   removeList(listId) {
     // @ts-ignore
-    if (confirm("Are You Sure You Want To Delete This Task?")) {
+    if (confirm("Are You Sure You Want To Delete This List?")) {
       ListService.removeList(listId);
     }
 
